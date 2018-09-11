@@ -2,8 +2,6 @@
 
         var player = map.getPlayer();
 
-   //     player.setColor('#f00');
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -22,15 +20,15 @@ player.setColor(rainbow[random13]);
            moveToward(me, 'player');
 
 -- 11 , 12 ,13 Robots
-//zasdada prawej albo lewej rêki .Zasada wychodzenia z labiryntu.
+//zasdada prawej albo lewej rÃªki .Zasada wychodzenia z labiryntu.
 
          var player = map.getPlayer();    
          var number = 3;
 
-if (player.getColor()=='#fff'){number=0;}else  //prawo bia³y
+if (player.getColor()=='#fff'){number=0;}else  //prawo biaÂ³y
 if (player.getColor()=='#0ff'){number=1;}else  //gora  morski
 if (player.getColor()=='#f0f'){number=2;}else  //lewo  purpura
-if (player.getColor()=='#ff0'){number=3;}      //dó³   ¿ó³ty
+if (player.getColor()=='#ff0'){number=3;}      //dÃ³Â³   Â¿Ã³Â³ty
 
             var directions = ['LR','DU','RL','UD']; //nic nie wnosi do apki
             var leftHand = ['up','left','down','right'];
