@@ -22,7 +22,7 @@ player.setColor(rainbow[random13]);
            moveToward(me, 'player');
 
 -- 11 , 12 ,13 Robots
-
+//zasdada prawej albo lewej rêki .Zasada wychodzenia z labiryntu.
 
          var player = map.getPlayer();    
          var number = 3;
