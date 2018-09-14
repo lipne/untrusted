@@ -20,41 +20,45 @@ player.setColor(rainbow[random13]);
            moveToward(me, 'player');
 
 -- 11 , 12 ,13 Robots
-//zasdada prawej albo lewej rÃªki .Zasada wychodzenia z labiryntu.
 
-         var player = map.getPlayer();    
-         var number=0;
+            var player = map.getPlayer();    
+         var number=2;
 
-<<<<<<< HEAD
 if (player.getColor()=='#fff'){number=0;}else  //prawo bi³y
-=======
-if (player.getColor()=='#fff'){number=0;}else  //prawo biaÂ³y
->>>>>>> afedd3879e68c86300880d153cb2fa1213441d20
 if (player.getColor()=='#0ff'){number=1;}else  //gora  morski
 if (player.getColor()=='#f0f'){number=2;}else  //lewo  purpura
-if (player.getColor()=='#ff0'){number=3;}      //dÃ³Â³   Â¿Ã³Â³ty
+if (player.getColor()=='#ff0'){number=3;}      //dó³   ¿ó³ty
 
             var leftHand = ['up','left','down','right'];
             var forward = ['right','up','left','down'];
             var rightHand = ['down','right','up','left'];
 
+function turnRight(num) 
+{ if (num>0) return --num;
+else return 3}
+
+function turnLeft(num) 
+{if(num<3)return ++num;else return 0;}
+
             var canMoveLeftHand= me.canMove(leftHand[number]);
             var canMoveForward = me.canMove(forward[number]);
             var canMoveRightHand= me.canMove(rightHand[number]);
-function turnLeft(number) {if (number>0)return --number;else return 3;}
-function turnRight(number) {if(number<3)return ++number;else return 0;}
+
+
+
+
 
 // begin maze move
-if (canMoveLeftHand){
+if (canMoveRightHand){
 //turn right
-number = turnRight(number);
+number= turnRight(number);
 //move forward
 me.move(forward[number]);
 } else 
-if (canMoveForward){
+if (canMoveForward)
 //move forward
-me.move(forward[number]);}
-else if (canMoveRightHand){
+me.move(forward[number]);
+else if (canMoveLeftHand){
 //turn left
 number = turnLeft(number);
 //move forward
@@ -62,8 +66,8 @@ me.move(forward[number]);
 }
 else{
 //turn back
-if(number>0){number--;}else number=3;
-if(number>0){number--;}else number=3;
+number = turnLeft(number);
+number = turnLeft(number);
 //move forward
 me.move(forward[number]);
 
@@ -73,6 +77,7 @@ me.move(forward[number]);
             if (number==1){player.setColor('#0ff')}else //sea
             if (number==2){player.setColor('#f0f')}else //purple
             if (number==3){player.setColor('#ff0')};    //yellow
+
 
 -- 14 
 
