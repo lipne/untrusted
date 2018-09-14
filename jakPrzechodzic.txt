@@ -25,39 +25,38 @@ player.setColor(rainbow[random13]);
 //zasdada prawej albo lewej rêki .Zasada wychodzenia z labiryntu.
 
          var player = map.getPlayer();    
-         var number = 3;
+         var number=0;
 
-if (player.getColor()=='#fff'){number=0;}else  //prawo bia³y
+if (player.getColor()=='#fff'){number=0;}else  //prawo bi³y
 if (player.getColor()=='#0ff'){number=1;}else  //gora  morski
 if (player.getColor()=='#f0f'){number=2;}else  //lewo  purpura
 if (player.getColor()=='#ff0'){number=3;}      //dó³   ¿ó³ty
 
-            var directions = ['LR','DU','RL','UD']; //nic nie wnosi do apki
             var leftHand = ['up','left','down','right'];
             var forward = ['right','up','left','down'];
             var rightHand = ['down','right','up','left'];
-            var backward = ['left','down','right','up'];
 
             var canMoveLeftHand= me.canMove(leftHand[number]);
             var canMoveForward = me.canMove(forward[number]);
             var canMoveRightHand= me.canMove(rightHand[number]);
+function turnLeft(number) {if (number>0)return --number;else return 3;}
+function turnRight(number) {if(number<3)return ++number;else return 0;}
 
 // begin maze move
 if (canMoveLeftHand){
-//turn left
-if (number<3){number++;}else number=0;
+//turn right
+number = turnRight(number);
 //move forward
 me.move(forward[number]);
 } else 
-if (canMoveForward)
+if (canMoveForward){
 //move forward
-{me.move(forward[number]);}
+me.move(forward[number]);}
 else if (canMoveRightHand){
-//turn right
-if (number>0){number--;}else number=3;
+//turn left
+number = turnLeft(number);
 //move forward
 me.move(forward[number]);
-
 }
 else{
 //turn back
@@ -67,7 +66,7 @@ if(number>0){number--;}else number=3;
 me.move(forward[number]);
 
 }
-
+            
             if (number==0){player.setColor('#fff')}else //white
             if (number==1){player.setColor('#0ff')}else //sea
             if (number==2){player.setColor('#f0f')}else //purple
