@@ -22,12 +22,12 @@ player.setColor(rainbow[random13]);
 -- 11 , 12 ,13 Robots
 
             var player = map.getPlayer();    
-         var number=2;
+         var number=2;// czasem trzeba zmienić kierunek, żeby nie kręcił się w kółko
 
-if (player.getColor()=='#fff'){number=0;}else  //prawo bi�y
+if (player.getColor()=='#fff'){number=0;}else  //prawo bi³y
 if (player.getColor()=='#0ff'){number=1;}else  //gora  morski
 if (player.getColor()=='#f0f'){number=2;}else  //lewo  purpura
-if (player.getColor()=='#ff0'){number=3;}      //d�   ��ty
+if (player.getColor()=='#ff0'){number=3;}      //dó³   ¿ó³ty
 
             var leftHand = ['up','left','down','right'];
             var forward = ['right','up','left','down'];
